@@ -17,14 +17,23 @@
         }
         #container {
             position: relative;
+            z-index: 1;
             width: 100%;
-            height: 100vh;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #canvas {
-            width: 100%;
-            height: 100%;
+            width: 50%;
+            height: 50%;
             display: block;
             background-color: #ffffff;
+        }
+        .no-animation {
+            transform: none !important;
+            opacity: 1 !important;
+            transition: none !important;
         }
         header, section {
             width: 90%;
@@ -37,6 +46,8 @@
             transform: translateY(50px);
             opacity: 0;
             transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            position: relative;
+            z-index: 10;
         }
         header.visible, section.visible {
             transform: translateY(0);
@@ -68,11 +79,9 @@
         .project, .experience {
             margin-bottom: 20px;
         }
-		
-		.project, .certifications {
+        .project, .certifications {
             margin-bottom: 20px;
         }
-		
         .skills ul {
             list-style-type: none;
             padding: 0;
@@ -125,31 +134,32 @@
         <canvas id="canvas"></canvas>
     </div>
 
-    <header>
+    <header class="no-animation">
         <h1>Sanad Abu Laila</h1>
         <p>Aspiring Computer Scientist with a strong foundation in programming skills and hands-on experience in database management,
-		algorithm development/analysis, and python development. Proven ability to design and implement complex systems, with a keen interest
-		in advancing a career in the Data Science industry.</p>
+        algorithm development/analysis, and python development. Proven ability to design and implement complex systems, with a keen interest
+        in advancing a career in the Data Science industry.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sanad-abu-laila-2159412a9" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/SanadAbuLaila?tab=repositories" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="mailto:sanadabulaila@hotmail.com" target="_blank"><i class="fas fa-envelope"></i> sanadabulaila@hotmail.com</a>
         </div>
     </header>
 
     <section id="experience">
         <h2>Experience</h2>
         <div class="experience">
-            <h3>Data Analysis and Business Intelligence Intern at <a href = "https://www.bankaletihad.com/en/" target = "_blank">Bank al Etihad</a></h3>
+            <h3>Data Analysis and Business Intelligence Intern at <a href="https://www.bankaletihad.com/en/who-we-are/" target="_blank">Bank al Etihad</a></h3>
             <p>8/9/2024 - 8/10/2024</p>
             <p>- Collected, processed, and analyzed data from diverse sources to identify key trends and insights, developed and delivered detailed reports and dashboards to present actionable findings to stakeholders.</p>
         </div>
         <div class="experience">
-            <h3>Data Analysis Intern at <a href = "https://www.unescwa.org/" target = "_blank">UN ESCWA</a> (Remote)</h3>
+            <h3>Data Analysis Intern at <a href="https://www.unescwa.org/about" target="_blank">UN ESCWA</a> (Remote)</h3>
             <p>17/7/2024 - 17/10/2024</p>
             <p>- Cleaned, verified and updated the data of over 20 countries regarding renewable energy sector, added data to existing database.</p>
         </div>
         <div class="experience">
-            <h3>Database Specialist Intern at <a href = "https://www.investbank.jo/" target = "_blank">Invest Bank</a></h3>
+            <h3>Database Specialist Intern at <a href="https://www.investbank.jo/" target="_blank">Invest Bank</a></h3>
             <p>9/7/2024 - 21/8/2024</p>
             <p>- Hands on training in Oracle SQL, used Toad for Oracle 15.0 to handle data and inqueries.</p>
         </div>
@@ -160,92 +170,56 @@
         <div class="project">
             <a href="https://github.com/SanadAbuLaila/Data-Engineering-Project" target="_blank"><h3>Data Engineering Project</h3></a>
             <ul>
-				<li>Developed a program to webscrape a Wikipedia page, extract data from said page,
-				transform the data and then upload the transformed data into a CSV file and a SQL database.</li>
-				</br>
-				<li>Python, Pandas, Numpy, SQLite3, requests, BeatifulSoup.</li>
-				</br>
-				<li>Used the ETL (Extract, Transform, Load) process to extract data from
-				a webpage, perform the necessary processing on the data then uploaded
-				the processed data onto a CSV spreadsheet and an SQLite3 database.</li>
-			</ul>
-			</div>
-		
-        <div class="project">
-            <a href = "https://github.com/SanadAbuLaila/Tahaleli-Reader" target = "_blank"><h3>Tahaleli Reader</h3></a>
-			<ul>
-				<li>Developed a comprehensive mobile application to
-				provide users with a convenient way to access and interpret their
-				laboratory results. The app offers recommendations for vitamins,
-				minerals, and macronutrients based on the results and alerts users
-				to consult a doctor if potential risks are detected.</li>
-				</br>
-				<li>Oracle SQL, Flutter, Python OCR 
-				(Optical Character Reader), Google Docs.</li>
-			</ul>
+                <li>Developed a program to webscrape a Wikipedia page, extract data from said page, transform the data and then upload the transformed data into a CSV file and a SQL database.</li>
+                <li>Python, Pandas, Numpy, SQLite3, requests, BeatifulSoup.</li>
+                <li>Used the ETL (Extract, Transform, Load) process to extract data from a webpage, perform the necessary processing on the data then uploaded the processed data onto a CSV spreadsheet and an SQLite3 database.</li>
+            </ul>
         </div>
-		
         <div class="project">
-			<a href="https://github.com/SanadAbuLaila/Gym-Database" target="_blank"><h3>Gym Database Management System Project</h3></a>
+            <a href="https://github.com/SanadAbuLaila/Tahaleli-Reader" target="_blank"><h3>Tahaleli Reader</h3></a>
             <ul>
-				<li> Developed a comprehensive database for a gym to
-				manage memberships, schedules, equipment, and payments.</li>
-				</br>
-				<li> Oracle SQL, SQL Plus.</li>
-				</br>
-				<li> Improved data organization and accessibility,
-				leading to increase in operational efficiency, led a team of
-				developers, organized and conducted team meetings, assigned
-				tasks, and ensured project milestones were met on time. </li>
-			</ul>            
+                <li>Developed a comprehensive mobile application to provide users with a convenient way to access and interpret their laboratory results. The app offers recommendations for vitamins, minerals, and macronutrients based on the results and alerts users to consult a doctor if potential risks are detected.</li>
+                <li>Oracle SQL, Flutter, Python OCR (Optical Character Reader), Google Docs.</li>
+            </ul>
         </div>
-		
+        <div class="project">
+            <a href="https://github.com/SanadAbuLaila/Gym-Database" target="_blank"><h3>Gym Database Management System Project</h3></a>
+            <ul>
+                <li>Developed a comprehensive database for a gym to manage memberships, schedules, equipment, and payments.</li>
+                <li>Oracle SQL, SQL Plus.</li>
+                <li>Improved data organization and accessibility, leading to increase in operational efficiency, led a team of developers, organized and conducted team meetings, assigned tasks, and ensured project milestones were met on time.</li>
+            </ul>
+        </div>
         <div class="project">
             <a href="https://github.com/SanadAbuLaila/Software-Dev-Company" target="_blank"><h3>Webpage Development Project</h3></a>
             <ul>
-				<li>Designed and implemented a responsive website for a
-				web development company.</li>
-				</br>
-				<li>HTML, CSS, JavaScript, Notepad++.</li>
-				</br>
-				<li>Increased user engagement by improving user
-				UI/UX, and improved client satisfaction with an enhanced online
-				presence, directed a team of web developers, managed project
-				timelines and facilitated the integration of design and functionality.</li>
-			</ul>
+                <li>Designed and implemented a responsive website for a web development company.</li>
+                <li>HTML, CSS, JavaScript, Notepad++.</li>
+                <li>Increased user engagement by improving user UI/UX, and improved client satisfaction with an enhanced online presence, directed a team of web developers, managed project timelines and facilitated the integration of design and functionality.</li>
+            </ul>
         </div>
-		
         <div class="project">
             <a href="https://github.com/SanadAbuLaila/Flight-Booking-System" target="_blank"><h3>Airline Booking System Project</h3></a>
             <ul>
-				<li>Developed a booking system for an airline company to
-				manage reservations, cancellations, and passenger information.</li>
-				<br/>
-				<li>Technologies Used: C#, Microsoft Visual Studio.</li>
-				<br/>
-				<li>Results: Streamlined the booking process, reducing
-				manual errors, handled many edge cases and improved customer
-				service efficiency, supervised a team of developers, handled project
-				planning and execution, and ensured the system met project
-				requirements and quality standards.</li>
-			</ul>
+                <li>Developed a booking system for an airline company to manage reservations, cancellations, and passenger information.</li>
+                <li>Technologies Used: C#, Microsoft Visual Studio.</li>
+                <li>Streamlined the booking process, reducing manual errors, handled many edge cases and improved customer service efficiency, supervised a team of developers, handled project planning and execution, and ensured the system met project requirements and quality standards.</li>
+            </ul>
         </div>
-		
     </section>
 
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="certifications">
-            <h3><a href = "https://www.ibm.com/us-en" target="_blank">IBM</a> --> <a href = "https://www.coursera.org/professional-certificates/ibm-data-science" target = "_blank">Data Science Professional Certificate</a> (176 hours)</h3>
-            <p>Learned the fundementals of Data Science, Data Engineering, Data Visualization, Story telling. Touched on some R programming, delved
-			deep into Python and SQL.</p>
+            <h3><a href="https://www.coursera.org/professional-certificates/ibm-data-science#courses" target="_blank">IBM Data Science Professional Certificate</a> (176 hours)  
+            <a href="test.pdf" target="_blank"> <i class="fas fa-file-download"></i></a></h3>
+            <p>Learned the fundamentals of Data Science, Data Engineering, Data Visualization, Storytelling. Touched on some R programming, delved deep into Python and SQL.</p>
         </div>
-		
         <div class="certifications">
-            <h3><a href = "https://thehope-tech.com/" target="_blank">The Hope International</a> --> <a href = "https://thehope-tech.com/course/25" target = "_blank">Python programming and Machine Learning</a> (60 hours)</h3>
-            <p>Delved deep into Python programming for Machine Learning</p>
+            <h3><a href="https://thehope-tech.com/course/25" target="_blank">The Hope International Python Programming and Machine Learning</a> (60 hours)  
+            <a href="test.pdf" target="_blank"> <i class="fas fa-file-download"></i></a></h3>
+            <p>Delved deep into Python programming for Machine Learning.</p>
         </div>
-		
     </section>
 
     <section id="skills">
@@ -255,27 +229,26 @@
                 <li>Python</li>
                 <li>Pandas</li>
                 <li>Numpy</li>
-				<li>BeautifulSoup</li>
+                <li>BeautifulSoup</li>
                 <li>Data Analysis</li>
                 <li>Oracle SQL</li>
-				<li>MySQL</li>
+                <li>MySQL</li>
                 <li>HTML</li>
-				<li>CSS</li>
-				<li>JavaScript</li>
-				<li>Jupyter Notebook</li>
-				<li>Linux</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Jupyter Notebook</li>
+                <li>Linux</li>
             </ul>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Contact</h2>
-        <form action="https://example.com/contact" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <div class="social-links">
+            <a href="mailto:sanadabulaila@hotmail.com" target="_blank"><i class="fas fa-envelope"></i> sanadabulaila@hotmail.com</a>
+            <a href="tel:+962790797760" target="_blank"><i class="fas fa-phone-alt"></i> +962 79 079 7760</a>
+            <a href="https://www.linkedin.com/in/sanad-abu-laila-2159412a9" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
     </section>
 
     <footer>
@@ -283,6 +256,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.7.0/dist/confetti.browser.min.js"></script>
     <script>
         // Three.js 3D Model Rendering
         const scene = new THREE.Scene();
@@ -308,15 +282,34 @@
         }
         animate();
 
+        // Confetti effect
+		// Confetti effect
+		function triggerConfetti() {
+			confetti({
+				particleCount: 350,
+				spread: 100,
+				origin: { x: 0.5, y: 1 }  // Origin set to the bottom center of the screen
+			});
+}
+
+
         // Scroll Animation
         const sections = document.querySelectorAll('header, section');
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // Show sections when scrolled into view
             sections.forEach(section => {
                 if (section.offsetTop < scrollPosition - 50) {
                     section.classList.add('visible');
                 }
             });
+
+            // Trigger confetti when reaching the bottom of the page
+            if (scrollPosition >= documentHeight - 10) {  // Adjusted to trigger before the very end
+                triggerConfetti();
+            }
         });
 
         // Handle resize
